@@ -1,0 +1,6 @@
+깃허브 스터디 프로젝트
+1.README 파일 생성
+2.git status : 상태를 확인하는 명령어
+->Untracked : 저장소에서 참조하지 않은 파일(New File)
+3.git add README : 해당 파일은 Staging Area 영역(Index)에 추적하는 명령어
+->Staged new file : README   :   index에서 해당 파일을 추적하는 중이다
