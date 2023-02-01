@@ -1,6 +1,27 @@
 깃허브 스터디 프로젝트
 1.README 파일 생성
 2.git status : 상태를 확인하는 명령어
-->Untracked : 저장소에서 참조하지 않은 파일(New File)
+  ->Untracked : 저장소에서 참조하지 않은 파일(New File)
 3.git add README : 해당 파일은 Staging Area 영역(Index)에 추적하는 명령어
-->Staged new file : README   :   index에서 해당 파일을 추적하는 중이다
+  ->Staged new file : README   :   index에서 해당 파일을 추적하는 중이다
+  ->nothing to commit, working tree clean : 작업이력과 저장소 이력이 같다.
+4. git commit -m "" : index에서 추적하는 내역을 .git(저장소)에 저장하는 명령어
+5. README를 수정 후 저장(Untracked modified : README)
+  -> modified :  README:작업이력과 저장소 이력이 다르다->저장해라
+6. git add README : 추적(Staged modified : README)
+7. git commit -m "README 수정 후 저장" : working tree clean
+
+** 파일생성 후 저장
+untracked -> staged -> unmodified(committed)
+** 파일 수정 후 저장
+modified ->staged -> unmodified(committed)
+
+git init : git 저장소 생성 (.git 포함하는 하위 폴더는 모두 저장소에서 관리)
+git diff / git diff [파일명] : 작업내역과 저장소의 이력을 비교해서 보여주는 명령어
+git diff --staged : 추적하는(index) 내역과 저장소의 이력을 비교해서 보여주는 명령어
+git add ., *, [파일명] : 작업내역을 index에서 추적하는 명령어 
+		(. : 하위폴더와 숨김폴더에 있는 모든 파일, * : 이전에 추가한적 있었던 모든 파일(새로운 파일 제외))
+git commit -m "" : index에서 추적하는 내역을 저장소에 저장하는 명령어
+git commit -a -m "" : git add * + git commit -m "" : 추적과 저장이 합쳐진 명령어
+git reset HEAD <file> : 추적하는 파일을 추적하지 않는 상태로 변경
+.gitignore : 파일을 작성하면 index에서 감시하지 않을 파일이나 폴더를 추가할 수 있다(컴퓨터나 편집기 설정 파일을 제외 또는 git 프로젝트 안에 다른 git 프로젝트가 있을 때)
